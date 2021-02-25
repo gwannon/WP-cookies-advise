@@ -1,0 +1,93 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cookies-araniasa\n"
+"POT-Creation-Date: 2021-02-19 11:49+0100\n"
+"PO-Revision-Date: 2021-02-19 11:49+0100\n"
+"Last-Translator: \n"
+"Language-Team: jorge@enutt.net\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-KeywordsList: _;_e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../cookies-araniasa.php:73
+msgid "Aviso de Cookies"
+msgstr ""
+
+#: ../cookies-araniasa.php:74
+msgid ""
+"Este sitio web utiliza cookies propias y de terceros para ofrecerte una "
+"mejor experiencia de usuario y para fines analíticos o estadísticos sobre su "
+"utilización."
+msgstr ""
+
+#: ../cookies-araniasa.php:75
+msgid ""
+"Puedes obtener más información en nuestra<br/><a href='/politica-de-"
+"cookies/'>politica de cookies</a>."
+msgstr ""
+
+#: ../cookies-araniasa.php:76
+msgid "Aceptar cookies"
+msgstr ""
+
+#: ../cookies-araniasa.php:77
+msgid "Rechazar cookies"
+msgstr ""
+
+#: ../cookies-araniasa.php:78
+msgid "Opciones"
+msgstr ""
+
+#: ../cookies-araniasa.php:80
+msgid "Básicas"
+msgstr ""
+
+#: ../cookies-araniasa.php:81
+msgid "Analíticas"
+msgstr ""
+
+#: ../cookies-araniasa.php:82
+msgid "Funcionales"
+msgstr ""
+
+#: ../cookies-araniasa.php:83
+msgid "Marketing"
+msgstr ""
+
+#: ../cookies-araniasa.php:84
+msgid "Acepto"
+msgstr ""
+
+#: ../cookies-araniasa.php:202 ../cookies-araniasa.php:214
+msgid "Cookies"
+msgstr ""
+
+#: ../cookies-araniasa.php:211
+msgid "Datos guardados correctamente."
+msgstr ""
+
+#: ../cookies-araniasa.php:215
+msgid "Cookies analítica"
+msgstr ""
+
+#: ../cookies-araniasa.php:217
+msgid "Cookies funcionales"
+msgstr ""
+
+#: ../cookies-araniasa.php:219
+msgid "Cookies marketing"
+msgstr ""
+
+#: ../cookies-araniasa.php:221
+msgid "Cookies para borrar (separados por comas)"
+msgstr ""
+
+#: ../cookies-araniasa.php:223
+msgid "Guardar"
+msgstr ""
