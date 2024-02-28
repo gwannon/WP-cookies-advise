@@ -22,8 +22,8 @@ add_action('plugins_loaded', 'cookies_enutt_plugins_loaded', 0 );
 
 // Metemos CSS y JS
 function cookies_enutt_register_scripts() {
-	wp_register_script('jquery-cookies', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js', array('jquery'), '1', false);
-	wp_enqueue_script('jquery-cookies');
+  wp_register_script('jquery-cookies', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js', array('jquery'), '1', false);
+  wp_enqueue_script('jquery-cookies');
 }
 add_action('wp_enqueue_scripts', 'cookies_enutt_register_scripts');
 
@@ -34,24 +34,19 @@ function cookies_enutt_add_header() {
     // Define dataLayer and the gtag function.
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-   
+
     if (typeof jQuery.cookie('cookies-enutt') != 'undefined') {
       var stringcookie = jQuery.cookie('cookies-enutt');
       //Analíticas
       var analytics_storage = (stringcookie.includes('allowall') || stringcookie.includes('allowanalytics') ? 'granted' : 'denied');
       //Marketing
       var ad_storage = (stringcookie.includes('allowall') || stringcookie.includes('allowmarketing') ? 'granted' : 'denied');
-      var personalization_storage =  (stringcookie.includes('allowall') || stringcookie.includes('allowmarketing') ? 'granted' : 'denied');
+      var personalization_storage = (stringcookie.includes('allowall') || stringcookie.includes('allowmarketing') ? 'granted' : 'denied');
       var ad_user_data = (stringcookie.includes('allowall') || stringcookie.includes('allowmarketing') ? 'granted' : 'denied');
       //Preferencias
       var ad_personalization = (stringcookie.includes('allowall') || stringcookie.includes('allowfunctionals') ? 'granted' : 'denied');
       //Necesarias
       var security_storage = 'granted';
-      /*console.log('analytics_storage '+analytics_storage+"\n"+
-        'ad_storage: '+ad_storage+"\n"+
-        'personalization_storage: '+personalization_storage+"\n"+
-        'ad_user_data: '+ad_user_data+"\n"+
-        'ad_personalization: '+ad_personalization+"\n");*/
       gtag('consent', 'update', {
         'analytics_storage': analytics_storage,
         'ad_storage': ad_storage,
@@ -71,7 +66,7 @@ function cookies_enutt_add_header() {
         'security_storage': 'granted'
       });
     }
-   
+
     <?php if(isset($_COOKIE['cookies-enutt'])) { 
       $cookies = explode(",", $_COOKIE['cookies-enutt']);
       if(in_array('allowall', $cookies) || in_array('allowanalytics', $cookies)) { 
@@ -109,11 +104,11 @@ function cookies_enutt_add_footer() {
       <button id="button-reject"><?php _e("Rechazar cookies", "cookies-enutt"); ?></button>
       <button id="button-options"><?php _e("Opciones", "cookies-enutt"); ?></button>
       <div id="options">
-          <p><input type="checkbox" id="option-basicas" checked="checked" value="allowbasics" /> <?php _e("Básicas", "cookies-enutt"); ?></p>
-          <p><input type="checkbox" id="option-analiticas" checked="checked" value="allowanalytics" /> <?php _e("Analíticas", "cookies-enutt"); ?></p>
-          <p><input type="checkbox" id="option-funcionales" checked="checked" value="allowfunctionals" /> <?php _e("Preferencias", "cookies-enutt"); ?></p>
-          <p><input type="checkbox" id="option-marketing" checked="checked" value="allowmarketing" /> <?php _e("Marketing", "cookies-enutt"); ?></p>
-          <button id="button-accept-options"><?php _e("Acepto", "cookies-enutt"); ?></button>
+        <p><input type="checkbox" id="option-basicas" checked="checked" value="allowbasics" /> <?php _e("Básicas", "cookies-enutt"); ?></p>
+        <p><input type="checkbox" id="option-analiticas" checked="checked" value="allowanalytics" /> <?php _e("Analíticas", "cookies-enutt"); ?></p>
+        <p><input type="checkbox" id="option-funcionales" checked="checked" value="allowfunctionals" /> <?php _e("Preferencias", "cookies-enutt"); ?></p>
+        <p><input type="checkbox" id="option-marketing" checked="checked" value="allowmarketing" /> <?php _e("Marketing", "cookies-enutt"); ?></p>
+        <button id="button-accept-options"><?php _e("Acepto", "cookies-enutt"); ?></button>
       </div>
     </div>
   </div>
@@ -194,11 +189,11 @@ function cookies_enutt_add_footer() {
       margin: 10px auto 0px;
       max-width: 120px;
     }
-    
+
     @media (min-width: 800px) {
       #cookie-advise {				
-          justify-content: space-around;
-          align-items: center;
+        justify-content: space-around;
+        align-items: center;
       }
 
       #cookie-advise.show {
@@ -208,7 +203,7 @@ function cookies_enutt_add_footer() {
       #cookie-advise > div > p:last-child {
         margin-bottom: 0px;
       }
-      
+
       #cookie-advise button {
         display: block;
         min-width: 150px;
@@ -276,12 +271,12 @@ function cookies_enutt_shortcode() {
   $cookies = explode(",", $_COOKIE['cookies-enutt']);
   ob_start(); ?>
   <div id="sc-options">
-      <p><b><?php _e("Opciones", "cookies-enutt"); ?></b></p>
-      <p><input type="checkbox" id="sc-option-basicas" checked="checked" value="allowbasics" /> <?php _e("Básicas", "cookies-enutt"); ?></p>
-      <p><input type="checkbox" id="sc-option-analiticas" <?php if(in_array('allowall', $cookies) || in_array('allowanalytics', $cookies)) { ?> checked="checked"<?php } ?>value="allowanalytics" /> <?php _e("Analíticas", "cookies-enutt"); ?></p>
-      <p><input type="checkbox" id="sc-option-funcionales" <?php if(in_array('allowall', $cookies) || in_array('allowfunctionals', $cookies)) { ?> checked="checked"<?php } ?> value="allowfunctionals" /> <?php _e("Preferencias", "cookies-enutt"); ?></p>
-      <p><input type="checkbox" id="sc-option-marketing" <?php if(in_array('allowall', $cookies) || in_array('allowmarketing', $cookies)) { ?> checked="checked"<?php } ?> value="allowmarketing" /> <?php _e("Marketing", "cookies-enutt"); ?></p>
-      <button id="sc-button-accept-options" class="button button-primary"><?php _e("Acepto", "cookies-enutt"); ?></button>
+    <p><b><?php _e("Opciones", "cookies-enutt"); ?></b></p>
+    <p><input type="checkbox" id="sc-option-basicas" checked="checked" value="allowbasics" /> <?php _e("Básicas", "cookies-enutt"); ?></p>
+    <p><input type="checkbox" id="sc-option-analiticas" <?php if(in_array('allowall', $cookies) || in_array('allowanalytics', $cookies)) { ?> checked="checked"<?php } ?>value="allowanalytics" /> <?php _e("Analíticas", "cookies-enutt"); ?></p>
+    <p><input type="checkbox" id="sc-option-funcionales" <?php if(in_array('allowall', $cookies) || in_array('allowfunctionals', $cookies)) { ?> checked="checked"<?php } ?> value="allowfunctionals" /> <?php _e("Preferencias", "cookies-enutt"); ?></p>
+    <p><input type="checkbox" id="sc-option-marketing" <?php if(in_array('allowall', $cookies) || in_array('allowmarketing', $cookies)) { ?> checked="checked"<?php } ?> value="allowmarketing" /> <?php _e("Marketing", "cookies-enutt"); ?></p>
+    <button id="sc-button-accept-options" class="button button-primary"><?php _e("Acepto", "cookies-enutt"); ?></button>
   </div>
   <script>
     jQuery("#sc-option-basicas").click(function(e) {
@@ -314,44 +309,39 @@ function cookies_enutt_shortcode() {
 //ADMIN -----------------------------------------
 add_action('admin_menu', 'cookies_enutt_plugin_menu');
 function cookies_enutt_plugin_menu() {
-	add_options_page(__('Cookies', "cookies-enutt"), __('Cookies', "cookies-enutt"), 'manage_options', "cookies-enutt", 'cookies_enutt_page_settings');
+  add_options_page(__('Cookies', "cookies-enutt"), __('Cookies', "cookies-enutt"), 'manage_options', "cookies-enutt", 'cookies_enutt_page_settings');
 }
 
 function cookies_enutt_page_settings() { 
-	if(isset($_REQUEST['send']) && $_REQUEST['send'] != '') { 
+  if(isset($_REQUEST['send']) && $_REQUEST['send'] != '') { 
     update_option('_cookies_enutt_bg_color', $_POST['_cookies_enutt_bg_color']);
     update_option('_cookies_enutt_text_color', $_POST['_cookies_enutt_text_color']);
     update_option('_cookies_enutt_gtm_code', $_POST['_cookies_enutt_gtm_code']);
-		update_option('_cookies_enutt_analiticas', $_POST['_cookies_enutt_analiticas']);
+    update_option('_cookies_enutt_analiticas', $_POST['_cookies_enutt_analiticas']);
     update_option('_cookies_enutt_funcionales', $_POST['_cookies_enutt_funcionales']);
     update_option('_cookies_enutt_marketing', $_POST['_cookies_enutt_marketing']);
     update_option('_cookies_enutt_politica_cookies', $_POST['_cookies_enutt_politica_cookies']);
     update_option('_cookies_enutt_position_x', $_POST['_cookies_enutt_position_x']);
     update_option('_cookies_enutt_position_y', $_POST['_cookies_enutt_position_y']);
-		?><p style="border: 1px solid green; color: green; text-align: center;"><?php _e("Datos guardados correctamente.", "cookies-enutt"); ?></p><?php
-	} ?>
-	<form method="post">
-		<h1><?php _e("Cookies", "cookies-enutt"); ?></h1>
-
+    ?><p style="border: 1px solid green; color: green; text-align: center;"><?php _e("Datos guardados correctamente.", "cookies-enutt"); ?></p><?php
+  } ?>
+  <form method="post">
+    <h1><?php _e("Cookies", "cookies-enutt"); ?></h1>
     <h2><?php _e("Color de fondo", "cookies-enutt"); ?></h2>
-		<input type="text" name="_cookies_enutt_bg_color" value="<?php echo get_option("_cookies_enutt_bg_color"); ?>" placeholder='<?php _e("#ffffff", 'cookies-enutt'); ?>' style="width: 100%;" />		
+    <input type="text" name="_cookies_enutt_bg_color" value="<?php echo get_option("_cookies_enutt_bg_color"); ?>" placeholder='<?php _e("#ffffff", 'cookies-enutt'); ?>' style="width: 100%;" />		
     <h2><?php _e("Color texto", "cookies-enutt"); ?></h2>
-		<input type="text" name="_cookies_enutt_text_color" value="<?php echo get_option("_cookies_enutt_text_color"); ?>" placeholder='<?php _e("#ffffff", 'cookies-enutt'); ?>' style="width: 100%;" />		
-   
-
-
+    <input type="text" name="_cookies_enutt_text_color" value="<?php echo get_option("_cookies_enutt_text_color"); ?>" placeholder='<?php _e("#ffffff", 'cookies-enutt'); ?>' style="width: 100%;" />		
     <h2><?php _e("Identificado de GTM", "cookies-enutt"); ?></h2>
-		<input type="text" name="_cookies_enutt_gtm_code" value="<?php echo get_option("_cookies_enutt_gtm_code"); ?>" placeholder='<?php _e("GTM-XXXXXXXXXX", 'cookies-enutt'); ?>' style="width: 100%;" />		
+    <input type="text" name="_cookies_enutt_gtm_code" value="<?php echo get_option("_cookies_enutt_gtm_code"); ?>" placeholder='<?php _e("GTM-XXXXXXXXXX", 'cookies-enutt'); ?>' style="width: 100%;" />		
     <h2><?php _e("Cookies analítica", "cookies-enutt"); ?></h2>
-		<textarea rows="10" style="width: 100%;" name="_cookies_enutt_analiticas"><?php echo stripslashes(get_option("_cookies_enutt_analiticas")); ?></textarea>
+    <textarea rows="10" style="width: 100%;" name="_cookies_enutt_analiticas"><?php echo stripslashes(get_option("_cookies_enutt_analiticas")); ?></textarea>
     <h2><?php _e("Cookies funcionales", "cookies-enutt"); ?></h2>
-		<textarea rows="10" style="width: 100%;" name="_cookies_enutt_funcionales"><?php echo stripslashes(get_option("_cookies_enutt_funcionales")); ?></textarea>
+    <textarea rows="10" style="width: 100%;" name="_cookies_enutt_funcionales"><?php echo stripslashes(get_option("_cookies_enutt_funcionales")); ?></textarea>
     <h2><?php _e("Cookies marketing", "cookies-enutt"); ?></h2>
-		<textarea rows="10" style="width: 100%;" name="_cookies_enutt_marketing"><?php echo stripslashes(get_option("_cookies_enutt_marketing")); ?></textarea>
-		<h2><?php _e("URL a la politica de cookies", "cookies-enutt"); ?></h2>
-		<input type="text" name="_cookies_enutt_politica_cookies" value="<?php echo get_option("_cookies_enutt_politica_cookies"); ?>" placeholder='<?php _e("URL a la politica de cookies", 'cookies-enutt'); ?>' style="width: 100%;" />		
-    
-		<h2><?php _e("Posición botón personalizar cookies", "cookies-enutt"); ?></h2>
+    <textarea rows="10" style="width: 100%;" name="_cookies_enutt_marketing"><?php echo stripslashes(get_option("_cookies_enutt_marketing")); ?></textarea>
+    <h2><?php _e("URL a la politica de cookies", "cookies-enutt"); ?></h2>
+    <input type="text" name="_cookies_enutt_politica_cookies" value="<?php echo get_option("_cookies_enutt_politica_cookies"); ?>" placeholder='<?php _e("URL a la politica de cookies", 'cookies-enutt'); ?>' style="width: 100%;" />		
+    <h2><?php _e("Posición botón personalizar cookies", "cookies-enutt"); ?></h2>
     <select name="_cookies_enutt_position_x">
       <option value="left"<?=(get_option('_cookies_enutt_position_x') == 'left' ? " selected='selected'" : ""); ?>><?php _e("Izquierda", 'cookies-enutt'); ?></option>
       <option value="right"<?=(get_option('_cookies_enutt_position_x') == 'right' ? " selected='selected'" : ""); ?>><?php _e("Derecha", 'cookies-enutt'); ?></option>
@@ -361,10 +351,8 @@ function cookies_enutt_page_settings() {
       <option value="calc(50% - 15px)"<?=(get_option('_cookies_enutt_position_y') == 'calc(50% - 15px)' ? " selected='selected'" : ""); ?>><?php _e("Medio", 'cookies-enutt'); ?></option>
       <option value="10px"<?=(get_option('_cookies_enutt_position_y') == '10px' ? " selected='selected'" : ""); ?>><?php _e("Arriba", 'cookies-enutt'); ?></option>
     </select>
-
     <br/><br/><input type="submit" name="send" class="button button-primary" value="<?php _e("Guardar"); ?>" />
-
-	</form>
+  </form>
 <?php }
 
 //FOOTER -----------------------------------------
