@@ -126,7 +126,6 @@ function cookies_enutt_add_footer() {
       z-index: 510;
       padding: 15px 28px;
       text-align: center;
-      font-family: "Quicksand", Helvetica, Arial, Verdana, sans-serif;	
       box-sizing: border-box;
       display: none;
     }
@@ -141,10 +140,6 @@ function cookies_enutt_add_footer() {
       line-height: 120%;
       color: <?=$text_color;?>;
       outline: none !important;
-    }
-    
-    #cookie-advise button {
-      font-family: "Quicksand", Helvetica, Arial, Verdana, sans-serif;
     }
     
     #cookie-advise > div {
@@ -165,7 +160,6 @@ function cookies_enutt_add_footer() {
     #cookie-advise p.title {
       font-weight: 700;
       font-size: 16px;
-      font-family: 'Quicksand', sans-serif;
     }
 
     #cookie-advise p a {
