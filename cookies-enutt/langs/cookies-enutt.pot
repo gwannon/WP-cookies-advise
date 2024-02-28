@@ -1,0 +1,125 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: cookies-enutt\n"
+"POT-Creation-Date: 2024-02-28 16:02+0100\n"
+"PO-Revision-Date: 2024-02-01 16:41+0100\n"
+"Last-Translator: \n"
+"Language-Team: jorge@enutt.net\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-KeywordsList: _;_e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../cookies-enutt.php:103
+msgid "En Eñutt Agency ¡utilizamos cookies!"
+msgstr ""
+
+#: ../cookies-enutt.php:104
+msgid ""
+"Lo hacemos para seguir mejorando en nuestros servicios porque las cookies "
+"nos ayudan a analizar el tráfico de nuestra web, qué páginas interesan más, "
+"cuánto tiempo estás en cada sección…y poder mostrarte la publicidad que "
+"realmente te interesa."
+msgstr ""
+
+#: ../cookies-enutt.php:105
+#, php-format
+msgid ""
+"Pero, tú decides cuáles quieres aceptar y cuáles no. Porque para nosotros "
+"tus decisiones importan. Puedes aceptarlas todas, solo algunas o "
+"directamente no aceptarlas. Pincha <a href='%s' rel='nofollow'>aquí</a> para "
+"saber más."
+msgstr ""
+
+#: ../cookies-enutt.php:108
+msgid "Aceptar cookies"
+msgstr ""
+
+#: ../cookies-enutt.php:109
+msgid "Rechazar cookies"
+msgstr ""
+
+#: ../cookies-enutt.php:110 ../cookies-enutt.php:279
+msgid "Opciones"
+msgstr ""
+
+#: ../cookies-enutt.php:112 ../cookies-enutt.php:280
+msgid "Básicas"
+msgstr ""
+
+#: ../cookies-enutt.php:113 ../cookies-enutt.php:281
+msgid "Analíticas"
+msgstr ""
+
+#: ../cookies-enutt.php:114 ../cookies-enutt.php:282
+msgid "Preferencias"
+msgstr ""
+
+#: ../cookies-enutt.php:115 ../cookies-enutt.php:283
+msgid "Marketing"
+msgstr ""
+
+#: ../cookies-enutt.php:116 ../cookies-enutt.php:284
+msgid "Acepto"
+msgstr ""
+
+#: ../cookies-enutt.php:317 ../cookies-enutt.php:334 ../cookies-enutt.php:373
+msgid "Cookies"
+msgstr ""
+
+#: ../cookies-enutt.php:331
+msgid "Datos guardados correctamente."
+msgstr ""
+
+#: ../cookies-enutt.php:336
+msgid "Color de fondo"
+msgstr ""
+
+#: ../cookies-enutt.php:337 ../cookies-enutt.php:339
+msgid "#ffffff"
+msgstr ""
+
+#: ../cookies-enutt.php:338
+msgid "Color texto"
+msgstr ""
+
+#: ../cookies-enutt.php:343
+msgid "Identificado de GTM"
+msgstr ""
+
+#: ../cookies-enutt.php:344
+msgid "GTM-XXXXXXXXXX"
+msgstr ""
+
+#: ../cookies-enutt.php:345
+msgid "Cookies analítica"
+msgstr ""
+
+#: ../cookies-enutt.php:347
+msgid "Cookies funcionales"
+msgstr ""
+
+#: ../cookies-enutt.php:349
+msgid "Cookies marketing"
+msgstr ""
+
+#: ../cookies-enutt.php:351 ../cookies-enutt.php:352
+msgid "URL a la politica de cookies"
+msgstr ""
+
+#: ../cookies-enutt.php:354
+msgid "Posición botón personalizar cookies"
+msgstr ""
+
+#: ../cookies-enutt.php:365
+msgid "Guardar"
+msgstr ""
+
+#: ../cookies-enutt.php:373
+msgid "Personalizar cookies"
+msgstr ""
