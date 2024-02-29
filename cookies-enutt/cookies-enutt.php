@@ -27,7 +27,7 @@ function cookies_enutt_register_scripts() {
 }
 add_action('wp_enqueue_scripts', 'cookies_enutt_register_scripts');
 
-add_action('wp_footer', 'cookies_enutt_add_header', 5); 
+add_action('wp_head', 'cookies_enutt_add_header', 5); 
 function cookies_enutt_add_header() { 
   ob_start(); ?>
   <script>
