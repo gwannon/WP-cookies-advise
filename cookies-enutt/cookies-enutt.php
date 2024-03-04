@@ -335,7 +335,7 @@ function cookies_enutt_page_settings() {
     <input type="checkbox" name="_cookies_enutt_analiticas_show" value="1" <?=(get_option("_cookies_enutt_analiticas_show") == 1 ? " checked='checked'" : "")?>><?php _e("Hay cookies de analitica", "cookies-enutt"); ?><br/>
     <h2><?php _e("Cookies funcionales", "cookies-enutt"); ?></h2>
     <textarea rows="10" style="width: 100%;" name="_cookies_enutt_funcionales"><?php echo stripslashes(get_option("_cookies_enutt_funcionales")); ?></textarea>
-    <input type="checkbox" name="_cookies_enutt_marketing_show" value="1" <?=(get_option("_cookies_enutt_funcionales_show") == 1 ? " checked='checked'" : "")?>><?php _e("Hay cookies de funcionales", "cookies-enutt"); ?><br/>
+    <input type="checkbox" name="_cookies_enutt_funcionales_show" value="1" <?=(get_option("_cookies_enutt_funcionales_show") == 1 ? " checked='checked'" : "")?>><?php _e("Hay cookies de funcionales", "cookies-enutt"); ?><br/>
     <h2><?php _e("Cookies marketing", "cookies-enutt"); ?></h2>
     <textarea rows="10" style="width: 100%;" name="_cookies_enutt_marketing"><?php echo stripslashes(get_option("_cookies_enutt_marketing")); ?></textarea>
     <input type="checkbox" name="_cookies_enutt_marketing_show" value="1" <?=(get_option("_cookies_enutt_marketing_show") == 1 ? " checked='checked'" : "")?>><?php _e("Hay cookies de marketing", "cookies-enutt"); ?><br/>
