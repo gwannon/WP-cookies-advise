@@ -57,7 +57,7 @@ msgid "Analíticas"
 msgstr ""
 
 #: ../cookies-enutt.php:114 ../cookies-enutt.php:282
-msgid "Preferencias"
+msgid "Funcionales"
 msgstr ""
 
 #: ../cookies-enutt.php:115 ../cookies-enutt.php:283

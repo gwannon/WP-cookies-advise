@@ -106,7 +106,7 @@ function cookies_enutt_add_footer() {
       <div id="options">
         <p><input type="checkbox" id="option-basicas" checked="checked" value="allowbasics" /> <?php _e("Básicas", "cookies-enutt"); ?></p>
         <?php if(get_option("_cookies_enutt_analiticas_show") == 1) { ?><p><input type="checkbox" id="option-analiticas" checked="checked" value="allowanalytics" /> <?php _e("Analíticas", "cookies-enutt"); ?></p><?php } ?>
-        <?php if(get_option("_cookies_enutt_funcionales_show") == 1) { ?><p><input type="checkbox" id="option-funcionales" checked="checked" value="allowfunctionals" /> <?php _e("Preferencias", "cookies-enutt"); ?></p><?php } ?>
+        <?php if(get_option("_cookies_enutt_funcionales_show") == 1) { ?><p><input type="checkbox" id="option-funcionales" checked="checked" value="allowfunctionals" /> <?php _e("Funcionales", "cookies-enutt"); ?></p><?php } ?>
         <?php if(get_option("_cookies_enutt_marketing_show") == 1) { ?><p><input type="checkbox" id="option-marketing" checked="checked" value="allowmarketing" /> <?php _e("Marketing", "cookies-enutt"); ?></p><?php } ?>
         <button id="button-accept-options"><?php _e("Acepto", "cookies-enutt"); ?></button>
       </div>
@@ -273,7 +273,7 @@ function cookies_enutt_shortcode() {
       <p class="explanation"><?php _e("Estas cookies se utilizan para comprender cómo interactúan los visitantes con el sitio web. Estas cookies ayudan a proporcionar información sobre métricas como el número de visitantes, la tasa de rebote, la fuente de tráfico, etc.", "cookies-enutt"); ?></p>
     <?php } ?>
     <?php if(get_option("_cookies_enutt_funcionales_show") == 1) { ?>
-      <p><input type="checkbox" id="sc-option-funcionales" <?php if(in_array('allowall', $cookies) || in_array('allowfunctionals', $cookies)) { ?> checked="checked"<?php } ?> value="allowfunctionals" /> <?php _e("Preferencias", "cookies-enutt"); ?></p>
+      <p><input type="checkbox" id="sc-option-funcionales" <?php if(in_array('allowall', $cookies) || in_array('allowfunctionals', $cookies)) { ?> checked="checked"<?php } ?> value="allowfunctionals" /> <?php _e("Funcionales", "cookies-enutt"); ?></p>
       <p class="explanation"><?php _e("Estas cookies se utilizan para habilitar las funciones básicas de este sitio, como proporcionar un inicio de sesión seguro o ajustar sus preferencias de consentimiento.", "cookies-enutt"); ?></p>
     <?php } ?>
     <?php if(get_option("_cookies_enutt_marketing_show") == 1) { ?>
