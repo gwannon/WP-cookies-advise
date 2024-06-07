@@ -4,7 +4,7 @@
  * Plugin Name: CookiesEñutt
  * Plugin URI:  https://www.enutt.net/
  * Description: Sistema de cookies para enutt.net
- * Version:     1.6.1
+ * Version:     1.6.2
  * Author:      Enutt S.L.
  * Author URI:  https://www.enutt.net/
  * License:     GNU General Public License v2 or later
@@ -267,11 +267,30 @@ function cookies_enutt_shortcode() {
   <div id="sc-options">
     <p><b><?php _e("Opciones", "cookies-enutt"); ?></b></p>
     <p><input type="checkbox" id="sc-option-basicas" checked="checked" value="allowbasics" /> <?php _e("Básicas", "cookies-enutt"); ?></p>
-    <?php if(get_option("_cookies_enutt_analiticas_show") == 1) { ?><p><input type="checkbox" id="sc-option-analiticas" <?php if(in_array('allowall', $cookies) || in_array('allowanalytics', $cookies)) { ?> checked="checked"<?php } ?>value="allowanalytics" /> <?php _e("Analíticas", "cookies-enutt"); ?></p><?php } ?>
-    <?php if(get_option("_cookies_enutt_funcionales_show") == 1) { ?><p><input type="checkbox" id="sc-option-funcionales" <?php if(in_array('allowall', $cookies) || in_array('allowfunctionals', $cookies)) { ?> checked="checked"<?php } ?> value="allowfunctionals" /> <?php _e("Preferencias", "cookies-enutt"); ?></p><?php } ?>
-    <?php if(get_option("_cookies_enutt_marketing_show") == 1) { ?><p><input type="checkbox" id="sc-option-marketing" <?php if(in_array('allowall', $cookies) || in_array('allowmarketing', $cookies)) { ?> checked="checked"<?php } ?> value="allowmarketing" /> <?php _e("Marketing", "cookies-enutt"); ?></p><?php } ?>
+    <p class="explanation"><?php _e("Estas cookies se básicas para el correcto funcionamiento de la web y no se pueden desactivar.", "cookies-enutt"); ?></p>
+    <?php if(get_option("_cookies_enutt_analiticas_show") == 1) { ?>
+      <p><input type="checkbox" id="sc-option-analiticas" <?php if(in_array('allowall', $cookies) || in_array('allowanalytics', $cookies)) { ?> checked="checked"<?php } ?>value="allowanalytics" /> <?php _e("Analíticas", "cookies-enutt"); ?></p>
+      <p class="explanation"><?php _e("Estas cookies se utilizan para comprender cómo interactúan los visitantes con el sitio web. Estas cookies ayudan a proporcionar información sobre métricas como el número de visitantes, la tasa de rebote, la fuente de tráfico, etc.", "cookies-enutt"); ?></p>
+    <?php } ?>
+    <?php if(get_option("_cookies_enutt_funcionales_show") == 1) { ?>
+      <p><input type="checkbox" id="sc-option-funcionales" <?php if(in_array('allowall', $cookies) || in_array('allowfunctionals', $cookies)) { ?> checked="checked"<?php } ?> value="allowfunctionals" /> <?php _e("Preferencias", "cookies-enutt"); ?></p>
+      <p class="explanation"><?php _e("Estas cookies se utilizan para habilitar las funciones básicas de este sitio, como proporcionar un inicio de sesión seguro o ajustar sus preferencias de consentimiento.", "cookies-enutt"); ?></p>
+    <?php } ?>
+    <?php if(get_option("_cookies_enutt_marketing_show") == 1) { ?>
+      <p><input type="checkbox" id="sc-option-marketing" <?php if(in_array('allowall', $cookies) || in_array('allowmarketing', $cookies)) { ?> checked="checked"<?php } ?> value="allowmarketing" /> <?php _e("Marketing", "cookies-enutt"); ?></p>
+      <p class="explanation"><?php _e("Estas cookies se utilizan para proporcionar a los visitantes anuncios personalizados basados en las páginas que visitó anteriormente y para analizar la efectividad de las campañas publicitarias.", "cookies-enutt"); ?></p>
+    <?php } ?>
     <button id="sc-button-accept-options" class="button button-primary"><?php _e("Acepto", "cookies-enutt"); ?></button>
   </div>
+  <style>
+    #sc-options p.explanation {
+      font-size: 14px;
+      line-height: 120%;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #000;
+    }
+  </style>
   <script>
     jQuery("#sc-option-basicas").click(function(e) {
       e.preventDefault();
