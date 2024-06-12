@@ -22,7 +22,7 @@ add_action('plugins_loaded', 'cookies_enutt_plugins_loaded', 0 );
 
 // Metemos CSS y JS
 function cookies_enutt_register_scripts() {
-  wp_register_script('jquery-cookies', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js', array('jquery'), '1', false);
+  wp_register_script('jquery-cookies', plugin_dir_url( __FILE__ ).'js/jquery.cookie.min.js', array('jquery'), '1', false);
   wp_enqueue_script('jquery-cookies');
 }
 add_action('wp_enqueue_scripts', 'cookies_enutt_register_scripts');
