@@ -80,13 +80,13 @@ function cookies_enutt_add_header() {
       } 
     } ?>
   </script>
-  <!-- Google Tag Manager -->
+  <?php if(get_option("_cookies_enutt_gtm_code") != '') { ?><!-- Google Tag Manager Cookies Eñutt -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','<?php echo get_option("_cookies_enutt_gtm_code"); ?>');</script>
-  <!-- End Google Tag Manager -->
+  <!-- End Google Tag Manager --><?php } ?>
   <?php echo ob_get_clean(); 
 }
 
@@ -267,7 +267,7 @@ function cookies_enutt_shortcode() {
   <div id="sc-options">
     <p><b><?php _e("Opciones", "cookies-enutt"); ?></b></p>
     <p><input type="checkbox" id="sc-option-basicas" checked="checked" value="allowbasics" /> <?php _e("Básicas", "cookies-enutt"); ?></p>
-    <p class="explanation"><?php _e("Estas cookies se básicas para el correcto funcionamiento de la web y no se pueden desactivar.", "cookies-enutt"); ?></p>
+    <p class="explanation"><?php _e("Estas cookies son básicas para el correcto funcionamiento de la web y no se pueden desactivar.", "cookies-enutt"); ?></p>
     <?php if(get_option("_cookies_enutt_analiticas_show") == 1) { ?>
       <p><input type="checkbox" id="sc-option-analiticas" <?php if(in_array('allowall', $cookies) || in_array('allowanalytics', $cookies)) { ?> checked="checked"<?php } ?>value="allowanalytics" /> <?php _e("Analíticas", "cookies-enutt"); ?></p>
       <p class="explanation"><?php _e("Estas cookies se utilizan para comprender cómo interactúan los visitantes con el sitio web. Estas cookies ayudan a proporcionar información sobre métricas como el número de visitantes, la tasa de rebote, la fuente de tráfico, etc.", "cookies-enutt"); ?></p>
